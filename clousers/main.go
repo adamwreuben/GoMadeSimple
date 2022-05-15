@@ -1,0 +1,19 @@
+package main
+
+//Anonymous functions
+import "fmt"
+
+func adder() func(int) int {
+	sum := 0
+	return func(i int) int {
+		sum += i
+		return sum
+	}
+}
+func main() {
+	fmt.Print("Hello world!")
+	sum := adder()
+	for i := 0; i < 10; i++ {
+		fmt.Println(sum(i))
+	}
+}
